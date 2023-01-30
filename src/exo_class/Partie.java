@@ -28,9 +28,7 @@ public class Partie {
 		for (Manche manche : listeManches) {
 			if (manche.getResultat().equals(Resultat.JOUEUR1_GAGNE) && pseudo.equals(pseudo1)) {
 				points++;
-			} else if (manche.getResultat().equals(Resultat.JOUEUR2_GAGNE) && pseudo.equals(pseudo2)) {
-				points++;
-			}
+			} else if (manche.getResultat().equals(Resultat.JOUEUR2_GAGNE) && pseudo.equals(pseudo2)) {points++;}
 		}
 		return points;
 	}
@@ -122,20 +120,20 @@ public class Partie {
 	public Coup jouerCoup() {
 
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Jouer coup : Pierre:1, Feuille:2, ciseaux:3");
+		System.out.println("Jouer coup : Pierre:1, Feuille:2, ciseaux:3, puis:4");
 		int choix = scanner.nextInt();
 		Coup coup;
 		if (choix == 1) {
 			coup = Coup.PIERRE;
 		} else if (choix == 2) {
 			coup = Coup.FEUILLE;
-		} else {
+		} else if (choix == 3) {
 			coup = Coup.CISEAUX;
-
+		} else {
+			coup = Coup.PUIS;
 		}
 
 		return coup;
-
 	}
 
 }

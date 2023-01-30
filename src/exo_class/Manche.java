@@ -26,7 +26,12 @@ public class Manche {
 		compareCoupMap.put(Coup.FEUILLE, Coup.PIERRE);
 		compareCoupMap.put(Coup.CISEAUX, Coup.FEUILLE);
 
+		compareCoupMap.put(Coup.PUIS, Coup.PIERRE);
+		compareCoupMap.put(Coup.PUIS, Coup.CISEAUX);
+		compareCoupMap.put(Coup.FEUILLE, Coup.PUIS);
+
 	}
+
 /*
 	public Resultat compareCoups() {
 		if (coupJoueur1.equals(Coup.PIERRE) && coupJoueur2.equals(Coup.CISEAUX)) {
@@ -59,8 +64,8 @@ public class Manche {
 		}
 		
 		return resultat;	
-		
 	}
+
 	public static Coup coupAleatoire() {
 		Random r = new Random();
 		int randomInt = r.nextInt(3);
