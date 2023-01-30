@@ -1,7 +1,7 @@
 package exo_class;
 
 class Employe extends Personne {
-  public Employe(String nom, int taille) {
-    super(nom, taille);
+  public Employe(String nom, String prenom, int taille,int ancien) {
+    super(nom,prenom,taille, ancien);
   }
 }

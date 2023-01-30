@@ -30,8 +30,7 @@ class CollectionPersonnes {
   }
 
   public void afficherPlusPetiteTaille() {
-    Personne plusPetiteTaille = personnes.stream().min((p1, p2) -> p1.getTaille() - p2.getTaille())
-        .orElse(null);
+    Personne plusPetiteTaille = personnes.stream().min((p1, p2) -> p1.getTaille() - p2.getTaille()).orElse(null);
     System.out.println("Personne avec la plus petite taille: " + plusPetiteTaille.getNom());
   }
 
@@ -39,4 +38,27 @@ class CollectionPersonnes {
     System.out.println("Liste triée: ");
     personnes.forEach(p -> System.out.println(p.getNom()));
   }
+  
+  public void trierParNomPrenom() {
+    Collections.sort(personnes, (p1, p2) -> {
+      if (p1.getNom().equals(p2.getNom())) {
+        return p1.getPrenom().compareTo(p2.getPrenom());
+      } else {
+        return p1.getNom().compareTo(p2.getNom());
+      }
+    });
+  }
+
+  public void afficherListeTrieeParNomPrenom() {
+    System.out.println("Liste triée par nom et prénom: ");
+    personnes.forEach(p -> System.out.println(p.getNom() + " " + p.getPrenom()));
+  }
+
+  public static void filterEmployerPlus3ans(){
+    
+  }
+
+
+
+
 }
